@@ -14,7 +14,7 @@ console.log(argvector);
 
 if(command === 'add'){
   console.log('Adding new note');
-  notes.addNote(argvector.tittle,argvector.body);
+  notes.addNote(argvector.title,argvector.body);
 }else if(command === 'list'){
   console.log('Listing all notes');
 }else if(command === 'read'){
