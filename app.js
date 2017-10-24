@@ -20,10 +20,10 @@ if(command === 'add'){
   notes.getAll();
 }else if(command === 'read'){
   console.log('Fetching specific note');
-  notes.readNote();
+  notes.readNote(argvector.title);
 }else if(command === 'remove'){
   console.log('Removing note');
-  notes.removeNote();
+  notes.removeNote(argvector.title);
 }
 else{
   console.log("The argument is not a known command. Try 'add', 'list', 'read' or 'remove'");
