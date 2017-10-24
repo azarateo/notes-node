@@ -26,5 +26,5 @@ if(command === 'add'){
   notes.removeNote(argvector.title);
 }
 else{
-  console.log("The argument is not a known command. Try 'add', 'list', 'read' or 'remove'");
+  console.log("Unknown command. Try 'add', 'list', 'read' or 'remove'");
 }
