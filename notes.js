@@ -5,5 +5,5 @@ var addNote = () => {
 };
 
 module.exports = {
-  addNote: addNote
+  addNote
 };
