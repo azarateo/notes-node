@@ -18,11 +18,11 @@ var addNote = (title,body) => {
   }finally{
     var duplicates = notes.filter((element)=>{return element.title === title});
 
-    if(duplicates){
-      console.log('A note with that title already exists');
-    }else{
+    if(duplicates.length===0){
       notes.push(note);
-      fs.writeFileSync('notesData.json',notesString);
+      fs.writeFileSync('notesData.json',JSON.stringify(notes));
+    }else{
+      console.log('A note with that title already exists');
     }
   }
 
