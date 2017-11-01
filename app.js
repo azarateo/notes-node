@@ -5,16 +5,22 @@ const _ = require('lodash');
 const yargs = require('yargs');
 //My modules
 const notes = require('./notes.js');
+//Variables
 const argvector = yargs.argv;
-
 var command = argvector._[0];
+//Output presenting used commands
 console.log('Command: '+command);
 console.log(process.argv);
 console.log(argvector);
-
+//Main app logic
 if(command === 'add'){
   console.log('Adding new note');
-  notes.addNote(argvector.title,argvector.body);
+  var note = notes.addNote(argvector.title,argvector.body);
+  if(typeof note === 'object'){
+    console.log('note inserted');
+  }else{
+    console.log('note not inserted');
+  }
 }else if(command === 'list'){
   console.log('Listing all notes');
   notes.getAll();

@@ -29,6 +29,7 @@ var addNote = (title,body) => {
   if(duplicates.length===0){
     notes.push(note);
     saveNotes(notes);
+    return note;
   }else{
     console.log('Title already in use. No note was added');
   }
