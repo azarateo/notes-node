@@ -17,9 +17,12 @@ if(command === 'add'){
   console.log('Adding new note');
   var note = notes.addNote(argvector.title,argvector.body);
   if(typeof note === 'object'){
-    console.log('note inserted');
+    console.log('Note inserted');
+    console.log('---');
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
   }else{
-    console.log('note not inserted');
+    console.log('Note not inserted');
   }
 }else if(command === 'list'){
   console.log('Listing all notes');
