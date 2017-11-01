@@ -18,7 +18,7 @@ var originalNote = {
 var objString = JSON.stringify(originalNote);
 fs.writeFileSync('notes.js',objString);
 
-var noteString = fs.readFileSync('notes.js');
+var noteString = fs.readFileSync('notes.json');
 var note = JSON.parse(noteString);
 console.log(typeof note);
 console.log('The title of the note:',note.title);

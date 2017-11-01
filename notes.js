@@ -12,11 +12,11 @@ var fetchNotes = () => {
     console.log('Creating first note');
   }
   return notes;
-}
+};
 // saveNotes method
 var saveNotes = (notes) => {
   fs.writeFileSync('notesData.json',JSON.stringify(notes));
-}
+};
 // addNote method
 var addNote = (title,body) => {
   console.log('Adding note with title:',title,' and body:',body);
@@ -44,8 +44,14 @@ var readNote = (title) => {
   console.log('Getting note with title:',title);
 };
 // removeNote method
-var removeNote = (title) => {
-  console.log('Removing note with title:',title);
+var removeNote;
+removeNote = (title) => {
+    console.log('Removing note with title:', title);
+    var notes = fetchNotes();
+    console.log(notes);
+    var filteredNotes = notes.filter((note) => note.title !== title);
+    console.log(filteredNotes);
+    saveNotes(filteredNotes);
 };
 
 //file interface, available methods or exports
