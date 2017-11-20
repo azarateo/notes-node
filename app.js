@@ -29,11 +29,15 @@ else if (command === 'list') {
 }
 else if (command === 'read') {
     console.log('Fetching specific note');
-    var specifiedNotes = notes.readNote(argvector.title);
-    specifiedNotes.forEach((note)=>{
+    var note = notes.readNote(argvector.title);
+    if(note){
+        conosle.log('Note found');
         console.log(`Title: ${note.title}`);
         console.log(`Body: ${note.body}`);
-    })
+    }else{
+        console.log('Note not found');
+    }
+
 
 }
 else if (command === 'remove') {
