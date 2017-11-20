@@ -32,7 +32,7 @@ else if (command === 'read') {
     var specifiedNotes = notes.readNote(argvector.title);
     specifiedNotes.forEach((note)=>{
         console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body});
+        console.log(`Body: ${note.body}`);
     })
 
 }
