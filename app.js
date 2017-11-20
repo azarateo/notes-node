@@ -33,7 +33,9 @@ else if (command === 'read') {
 }
 else if (command === 'remove') {
     console.log('Removing note');
-    notes.removeNote(argvector.title);
+    var notesRemoved = notes.removeNote(argvector.title);
+    var message = notesRemoved ? 'Note was removed' : 'Note was not removed ';
+    console.log(message);
 }
 else {
     console.log("Unknown command. Try 'add', 'list', 'read' or 'remove'");

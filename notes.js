@@ -1,7 +1,7 @@
 console.log('Strating notes.js');
 const fs = require('fs');
 // fetchNotes Method
-var fetchNotes = () => {
+var fetchNotes = () =>  {
   var notes = [];
   try{
     var notesString = fs.readFileSync('notesData.json');
@@ -9,7 +9,6 @@ var fetchNotes = () => {
   }catch(err){
     console.log('notesData.json was not opened');
     console.log(err);
-    console.log('Creating first note');
   }
   return notes;
 };
@@ -42,16 +41,17 @@ var getAll = () => {
 // readNote method
 var readNote = (title) => {
   console.log('Getting note with title:',title);
+  var notes = fetchNotes();
+  var note = notes.filter(title)[0];
+
 };
 // removeNote method
-var removeNote;
-removeNote = (title) => {
+var removeNote = (title) => {
     console.log('Removing note with title:', title);
     var notes = fetchNotes();
-    console.log(notes);
     var filteredNotes = notes.filter((note) => note.title !== title);
-    console.log(filteredNotes);
     saveNotes(filteredNotes);
+    return filteredNotes.length !== notes.length;
 };
 
 //file interface, available methods or exports
