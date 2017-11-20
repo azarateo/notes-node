@@ -33,8 +33,8 @@ else if (command === 'read') {
 }
 else if (command === 'remove') {
     console.log('Removing note');
-    var notesRemoved = notes.removeNote(argvector.title);
-    var message = notesRemoved ? 'Note was removed' : 'Note was not removed ';
+    var noteRemoved = notes.removeNote(argvector.title);
+    var message = noteRemoved ? 'Note was removed' : 'Note was not removed ';
     console.log(message);
 }
 else {
