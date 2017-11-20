@@ -29,7 +29,12 @@ else if (command === 'list') {
 }
 else if (command === 'read') {
     console.log('Fetching specific note');
-    notes.readNote(argvector.title);
+    var specifiedNotes = notes.readNote(argvector.title);
+    specifiedNotes.forEach((note)=>{
+        console.log(`Title: ${note.title}`);
+        console.log(`Body: ${note.body});
+    })
+
 }
 else if (command === 'remove') {
     console.log('Removing note');

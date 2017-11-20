@@ -42,7 +42,8 @@ var getAll = () => {
 var readNote = (title) => {
   console.log('Getting note with title:',title);
   var notes = fetchNotes();
-  var note = notes.filter(title)[0];
+  var filteredNotes = notes.filter(title);
+  return filteredNotes;
 
 };
 // removeNote method
