@@ -16,9 +16,7 @@ if (command === 'add') {
     let note = notes.addNote(argvector.title, argvector.body);
     if (typeof note === 'object') {
         console.log('Note inserted');
-        console.log('---');
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
+        notes.logNote(note);
     } else {
         console.log('Note not inserted');
     }
@@ -31,14 +29,11 @@ else if (command === 'read') {
     console.log('Fetching specific note');
     var note = notes.readNote(argvector.title);
     if(note){
-        conosle.log('Note found');
-        console.log(`Title: ${note.title}`);
-        console.log(`Body: ${note.body}`);
+        console.log('Note found:');
+        notes.logNote(note);
     }else{
         console.log('Note not found');
     }
-
-
 }
 else if (command === 'remove') {
     console.log('Removing note');
