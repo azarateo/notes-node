@@ -1,4 +1,4 @@
-console.log('Strating notes.js');
+console.log('Starting notes.js');
 const fs = require('fs');
 // fetchNotes Method
 var fetchNotes = () =>  {
